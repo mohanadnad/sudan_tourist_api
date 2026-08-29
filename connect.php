@@ -1,12 +1,13 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 
-$db   = "if0_42759111_sudan_tourist_guid";
-$user = "if0_42759111";
-$pass = "J15WCpwgsBVU";
-$host = "sql204.infinityfree.com";
+$db   = "sudan_tourst_database";
+$user = "mohanad";
+$pass = "GpcJNUQxH6qcmvD32VzdnTxkUo1OgI3V";
+$host = "dpg-da9i582jnfac73dv2d7g-a";
+$port = "5432";
 
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8";
+$connection = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8", $user, $pass);
 
 try {
     $connection = new PDO($dsn, $user, $pass);
