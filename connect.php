@@ -1,11 +1,11 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 
-$db   = "sudan_tourst_database";
-$user = "mohanad";
-$pass = "GpcJNUQxH6qcmvD32VzdnTxkUo1OgI3V";
-$host = "dpg-da9i582jnfac73dv2d7g-a";
-$port = "5432";
+$db   = "bncppwmccmwighcaw6yf";
+$user = "ubic8juwohiwkdyr";
+$pass = "Pm6D6re3nR99YvF1Xyrl";
+$host = "bncppwmccmwighcaw6yf-mysql.services.clever-cloud.com";
+$port = "3306";
 
 $connection = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8", $user, $pass);
 
