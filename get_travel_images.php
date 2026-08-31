@@ -1,15 +1,10 @@
 <?php
-include 'connect.php';
-if (!isset($_GET['travel_id'])) {
-    echo json_encode([]);
-    exit;
-}
+header("Content-Type: application/json");
+include "connect.php";
 
-$id = $_GET['travel_id'];
+$travel_id = $_GET["travel_id"];
 
-$stmt = $connection->prepare("
-    SELECT imageUrl FROM travel_images WHERE travel_id = ?
-");
-$stmt->execute([$id]);
+$stmt = $connection->prepare("SELECT * FROM travel_images WHERE travel_id = :id");
+$stmt->execute([":id" => $travel_id]);
 
-echo json_encode($stmt->fetchAll(PDO::FETCH_COLUMN));
+echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));

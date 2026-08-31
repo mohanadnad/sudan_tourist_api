@@ -2,7 +2,7 @@
 header("Content-Type: application/json");
 include "connect.php";
 
-$stmt = $connection->prepare("DELETE FROM bookings WHERE id = :id");
+$stmt = $connection->prepare("DELETE FROM restaurants WHERE id = :id");
 $stmt->execute([":id" => $_POST["id"]]);
 
 echo json_encode(["status" => "success"]);
