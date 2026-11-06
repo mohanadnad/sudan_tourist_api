@@ -6,7 +6,7 @@ $lang = $_GET['lang'] ?? 'ar';
 $titleCol = $lang == 'en' ? 'title_en' : 'title';
 
 $stmt = $connection->prepare("
-    SELECT id, $titleCol AS title, imageUrl
+    SELECT id, $titleCol AS title, imageUrl, city_description
     FROM categories
 ");
 $stmt->execute();
