@@ -8,7 +8,7 @@ $cityCol = $lang == 'en' ? 'cityNameEn' : 'cityName';
 
 $stmt = $connection->prepare("
     SELECT id, $titleCol AS title, $cityCol AS cityName,
-           imageUrl, latitude, longitude, categoryId,travelTypeEn, travelType,budget, rating, webUrl,features
+           imageUrl, latitude, longitude, categoryId,travelTypeEn, travelType,budget, rating, webUrl, features
                  (SELECT AVG(rating_value) FROM ratings WHERE place_id = hotels.id) AS avgRating
     FROM hotels
 ");
